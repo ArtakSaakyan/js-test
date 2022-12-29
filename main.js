@@ -52,7 +52,7 @@ function getProfitableProject(time, profit) {
   let costsUrgency = getPrice(time, true) - profit
   let costsNoUrgency = getPrice(time, false)
 
-  if (costsUrgency > costsNoUrgency) {
+  if (costsNoUrgency > costsUrgency) {
     return 'Выгодней срочный проект. Потратишь на него ' + costsUrgency
   } else {
     return 'Выгодней обычный проект. Потратишь на него ' + costsNoUrgency
