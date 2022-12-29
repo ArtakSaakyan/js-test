@@ -21,45 +21,22 @@
 // Задача 3
 function getPrice(time, urgency) {
   let bid = 1500
-  let timeMore = time / 2
-  
-  if (urgency && timeMore <= 150) {
-    let sum = (time / 2) * (bid * 2.5)
-    console.log('Проект срочный')
-    console.log('Ставка: ' + bid * 2.5)
-    console.log('Количество часов: ' + time / 2)
-    return 'Стоиомость проекта: ' + sum + '₽'
 
-  } else if (urgency & timeMore > 150) {
-    let sum = time * (bid - 250)
-    console.log('Проект срочный, но время проекта больше 150 часов')
-    console.log('Ставка: ' + (bid - 250))
-    console.log('Количество часов: ' + time)
-    return 'Стоиомость проекта: ' + sum + '₽'
-
-  } else {
-    let sum = time * bid
-    console.log('Проект не срочный')
-    console.log('Ставка: ' + bid)
-    console.log('Количество часов: ' + time)
-    return 'Стоиомость проекта: ' + sum + '₽'
+  if (urgency) {
+    bid = bid * 2.5
+    time = time / 2
   }
+
+  if (time > 150) {
+    bid = bid - 250
+  }
+  
+  return time * bid
 }
 
-console.log(getPrice(300, true))
-
-// Оптимизированный код
-function getPrice(time, urgency) {
-  let bid = 1500
-  let timeMore = time / 2
-  
-  if (urgency && timeMore < 150) {
-    return (time / 2) * (bid * 2.5)
-  } else if (urgency & timeMore > 150) {
-    return time * (bid - 250)
-  } else {
-    return time * bid
-  }
-}
-
-console.log(getPrice(150, true))
+console.log(getPrice(200, true)) // 375 000
+console.log(getPrice(150, false)) // 225 000
+console.log(getPrice(100, true)) // 187 500
+console.log(getPrice(150, true)) // 281 250
+console.log(getPrice(320, true)) // 560 000
+console.log(getPrice(320, false)) // 400 000
