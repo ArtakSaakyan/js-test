@@ -1,5 +1,18 @@
-function square(numbers) {
-  return numbers.filter(num => !(num % 2)).reduce((a, b) => a + Math.sqrt(b))
-}
+// Напишите однострочное решение, которое вычисляет сумму квадратных корней для всех чётных чисел целочисленного массива.
+// function square(numbers) {
+//   return numbers.filter(num => !(num % 2)).reduce((a, b) => a + Math.sqrt(b))
+// }
 
-console.log(square([0, 5, 9, 25, 49, 81, 100, 196, 256]))
+// console.log(square([0, 5, 9, 25, 49, 81, 100, 196, 256]))
+
+// Выйдите из цикла, изменив только две отмеченные строки. Результат в консоли сейчас останавливается на 9 9. Должен на 5 4.
+for (let i = 0; i <= 5; i++) { //! Эту строку можно изменить
+  for (let j = 0; j < 10; j++) {
+    if (i === 5 && j === 5) {
+      //! Эту строку можно изменить
+      console.log('i = ' + i + ' | ' + 'j = ' + j)
+      break
+    }
+    console.log(i, j);
+  }
+}
