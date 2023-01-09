@@ -23,20 +23,20 @@
 
 
 // Задача 3
-function getPrice(time, urgency) {
-  let bid = 1500
+// function getPrice(time, urgency) {
+//   let bid = 1500
 
-  if (urgency) {
-    bid = bid * 2.5
-    time = time / 2
-  }
+//   if (urgency) {
+//     bid = bid * 2.5
+//     time = time / 2
+//   }
 
-  if (time > 150) {
-    bid = bid - 250
-  }
+//   if (time > 150) {
+//     bid = bid - 250
+//   }
   
-  return time * bid
-}
+//   return time * bid
+// }
 
 // console.log(getPrice(200, true)) // 375 000
 // console.log(getPrice(150, false)) // 225 000
@@ -48,15 +48,25 @@ function getPrice(time, urgency) {
 
 
 // Задача 
-function getProfitableProject(time, profit) {
-  let costsUrgency = getPrice(time, true) - profit
-  let costsNoUrgency = getPrice(time, false)
+// function getProfitableProject(time, profit) {
+//   let costsUrgency = getPrice(time, true) - profit
+//   let costsNoUrgency = getPrice(time, false)
 
-  if (costsNoUrgency > costsUrgency) {
-    return 'Выгодней срочный проект. Потратишь на него ' + costsUrgency
-  } else {
-    return 'Выгодней обычный проект. Потратишь на него ' + costsNoUrgency
-  }
+//   if (costsNoUrgency > costsUrgency) {
+//     return 'Выгодней срочный проект. Потратишь на него ' + costsUrgency
+//   } else {
+//     return 'Выгодней обычный проект. Потратишь на него ' + costsNoUrgency
+//   }
+// }
+
+// console.log(getProfitableProject(150, 500000))
+
+
+
+// Задача 6
+function getRepeats(words) {
+  const result = {}
+  return new Set(words)
 }
 
-console.log(getProfitableProject(150, 500000))
+console.log(getRepeats(['один', 'два', 'один', 'три', 'один', 'два', 'два', 'три', 'один']))
